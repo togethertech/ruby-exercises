@@ -12,38 +12,3 @@
 # It should say "Hello, I am a car that was made in a factory"
 # Call the count class variable again
 # It should say "I have made 4 cars"
-
-class Car
-  @@cars_count = 0
-  attr_reader :serial_number
-
-  def initialize(name)
-    @name = name
-    @@cars_count += 1
-    @serial_number = @@cars_count
-  end
-
-  def introduce
-    puts "I am a #{@name} that came from a factory that made #{@@cars_count} cars and my serial number is #{@serial_number}"
-  end
-  
-  def self.count
-    puts "I have made #{@@cars_count} cars"
-  end
-
-  def naughty
-    puts "I am a naughty car hacker and I am going to change the factory's books"
-    @@cars_count += 9999999
-  end
-end
-
-Car.count
-gti = Car.new(" gti ")
-gti.introduce
-citigolf = Car.new("chico")
-
-citigolf.introduce
-gti.naughty
-jetta = Car.new("jetta")
-
-jetta.introduce
